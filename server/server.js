@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({extended : true}));
 // Serve static files...
 app.use(express.static('server/public'))
 // make a PORT...
-const PORT = 5000;
+
+const PORT = process.env.PORT || 5000;
 
 app.get('/history', (req, res) => {
   res.send(historyArray);
